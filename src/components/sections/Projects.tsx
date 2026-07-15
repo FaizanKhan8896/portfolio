@@ -85,7 +85,7 @@ export function Projects() {
   });
 
   // Map scroll progress to horizontal translation
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-75%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-90%"]);
 
   if (isMobile) {
     return (
