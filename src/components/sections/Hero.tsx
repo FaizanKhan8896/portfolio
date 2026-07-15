@@ -56,8 +56,8 @@ export function Hero() {
       
       {/* Background Marquee */}
       <div className="absolute inset-0 z-0 flex flex-col justify-center opacity-[0.03]">
-        <Marquee text="CREATIVE DEVELOPER" speed={50} className="text-[15rem] font-heading font-bold" />
-        <Marquee text="AI ENGINEER" speed={40} className="text-[15rem] font-heading font-bold" />
+        <Marquee text="CREATIVE DEVELOPER" speed={50} className="text-[8rem] lg:text-[15rem] font-heading font-bold" />
+        <Marquee text="AI ENGINEER" speed={40} className="text-[8rem] lg:text-[15rem] font-heading font-bold" />
       </div>
 
       <motion.div 
@@ -72,7 +72,7 @@ export function Hero() {
               initial="hidden"
               animate="visible"
               variants={titleVariants}
-              className="text-[4rem] sm:text-[6rem] lg:text-[10rem] font-heading font-bold tracking-tighter leading-[0.8] text-white"
+              className="text-[3.2rem] sm:text-[5rem] lg:text-[10rem] font-heading font-bold tracking-tighter leading-[0.8] text-white"
               style={{ transformOrigin: "bottom center" }}
             >
               FAIZAN
@@ -84,7 +84,7 @@ export function Hero() {
               initial="hidden"
               animate="visible"
               variants={titleVariants}
-              className="text-[4rem] sm:text-[6rem] lg:text-[10rem] font-heading font-bold tracking-tighter leading-[0.8] text-metallic"
+              className="text-[3.2rem] sm:text-[5rem] lg:text-[10rem] font-heading font-bold tracking-tighter leading-[0.8] text-metallic"
               style={{ transformOrigin: "bottom center" }}
             >
               KHAN.

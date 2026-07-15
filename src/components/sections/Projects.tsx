@@ -109,7 +109,7 @@ export function Projects() {
           {projects.map((project) => (
             <div 
               key={project.id}
-              className="w-[85vw] md:w-[60vw] lg:w-[50vw] shrink-0 flex flex-col gap-8 group"
+              className="w-[90vw] md:w-[60vw] lg:w-[50vw] shrink-0 flex flex-col gap-8 group"
             >
               {/* Image Container */}
               <div className="relative aspect-[16/10] rounded-[2rem] overflow-hidden bg-white/5 border border-white/5">
@@ -136,7 +136,7 @@ export function Projects() {
               {/* Project Details */}
               <div className="flex flex-col gap-4">
                 <div className="flex items-center justify-between">
-                  <h3 className="text-4xl md:text-5xl font-heading font-bold text-white tracking-tight group-hover:text-metallic transition-colors duration-500">{project.title}</h3>
+                  <h3 className="text-3xl md:text-5xl font-heading font-bold text-white tracking-tight group-hover:text-metallic transition-colors duration-500">{project.title}</h3>
                 </div>
                 
                 <p className="text-zinc-400 font-light text-lg leading-relaxed mb-4 max-w-xl">

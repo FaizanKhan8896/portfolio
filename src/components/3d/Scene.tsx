@@ -10,8 +10,9 @@ export function Scene() {
     <div className="fixed inset-0 z-0 pointer-events-none bg-background">
       <Canvas
         camera={{ position: [0, 0, 1] }} // For screen space shader, distance doesn't matter much but keep it simple
-        gl={{ antialias: true, alpha: false }}
-        dpr={[1, 2]} // limit pixel ratio for performance
+        gl={{ antialias: true, alpha: false, powerPreference: "high-performance" }}
+        dpr={[1, 1]} // strictly limit pixel ratio for background performance
+        performance={{ min: 0.5 }} // drop resolution on frame drops
       >
         <color attach="background" args={['#050505']} />
         <Suspense fallback={null}>
