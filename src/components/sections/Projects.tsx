@@ -100,7 +100,7 @@ export function Projects() {
   });
 
   // Map scroll progress to horizontal translation (exact pixel amount)
-  const x = useTransform(scrollYProgress, [0, 1], [0, -scrollRange]);
+  const x = useTransform(scrollYProgress, (v) => v * -scrollRange);
 
   if (isMobile) {
     return (
