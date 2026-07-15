@@ -42,14 +42,14 @@ export function Navigation() {
       className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4"
     >
       <div className="flex items-center gap-4">
-        <nav className="flex items-center gap-2 px-4 py-2 bg-black/40 backdrop-blur-xl border border-white/10 rounded-full shadow-2xl">
+        <nav className="flex items-center gap-1 sm:gap-2 px-2 sm:px-4 py-1 sm:py-2 bg-black/40 backdrop-blur-xl border border-white/10 rounded-full shadow-2xl overflow-x-auto max-w-[95vw] scrollbar-hide">
           {navItems.map((item) => (
             <Link
               key={item.name}
               href={item.href}
               onClick={() => setActive(item.name)}
               className={cn(
-                'relative px-4 py-2 text-sm font-medium transition-colors hover:text-white',
+                'relative px-3 sm:px-4 py-2 text-xs sm:text-sm font-medium transition-colors hover:text-white whitespace-nowrap',
                 active === item.name ? 'text-white' : 'text-zinc-400'
               )}
             >

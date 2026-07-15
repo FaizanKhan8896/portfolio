@@ -50,7 +50,7 @@ export function Contact() {
           transition={{ duration: 0.6 }}
           className="w-full lg:w-1/2 flex flex-col"
         >
-          <h2 className="text-5xl md:text-7xl font-bold mb-6 text-white leading-tight">
+          <h2 className="text-4xl md:text-7xl font-bold mb-6 text-white leading-tight">
             Let's build <br/><span className="text-zinc-500">something great.</span>
           </h2>
           <p className="text-xl text-zinc-400 font-light mb-12 max-w-md">

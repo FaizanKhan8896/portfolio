@@ -144,4 +144,13 @@
   .lenis.lenis-smooth iframe {
     pointer-events: none;
   }
+
+  /* Utility for horizontal scrolling without visible scrollbars */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }

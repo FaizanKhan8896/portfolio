@@ -54,7 +54,7 @@ export function About() {
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             >
               <h2 className="text-xs font-mono text-zinc-500 uppercase tracking-[0.3em] mb-6">About Me</h2>
-              <h3 className="text-5xl md:text-7xl font-heading font-bold text-white tracking-tighter leading-[0.9]">
+              <h3 className="text-4xl md:text-7xl font-heading font-bold text-white tracking-tighter leading-[0.9]">
                 Engineering <br/>
                 <span className="text-metallic">the future.</span>
               </h3>
