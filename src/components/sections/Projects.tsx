@@ -133,7 +133,7 @@ export function Projects() {
     );
   }
   return (
-    <section ref={targetRef} id="projects" className="relative h-[400vh] bg-zinc-950/80 backdrop-blur-3xl border-t border-white/5">
+    <section ref={targetRef} id="projects" className="relative h-[500vh] bg-zinc-950/80 backdrop-blur-3xl border-t border-white/5">
       <div className="sticky top-0 h-screen flex items-center overflow-hidden">
         
         {/* Background Marquee specific to projects */}
@@ -141,7 +141,7 @@ export function Projects() {
           <Marquee text="FEATURED WORK" speed={40} className="text-[20rem] font-heading font-bold" />
         </div>
 
-        <motion.div style={{ x }} className="flex gap-16 md:gap-32 px-4 md:px-32 relative z-10 items-center">
+        <motion.div style={{ x }} className="flex w-max gap-16 md:gap-32 px-4 md:px-32 relative z-10 items-center">
           
           {/* Title Card */}
           <div className="w-[80vw] md:w-[40vw] shrink-0 flex flex-col justify-center">
