@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import { ExternalLink } from 'lucide-react';
@@ -70,16 +70,68 @@ const projects = [
 ];
 
 export function Projects() {
+  const [isMobile, setIsMobile] = useState(true);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   const targetRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
   });
 
   // Map scroll progress to horizontal translation
-  // We go from 0% to a negative percentage to slide items left.
-  // The exact percentage depends on the number of cards and window width,
-  // but a simple approach is translating a percentage of the total track width.
-  // Since the track contains the title + cards, we map to a rough -80% (needs tweaking based on layout).
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-75%"]);
+
+  if (isMobile) {
+    return (
+      <section id="projects" className="relative py-24 bg-zinc-950/80 backdrop-blur-3xl border-t border-white/5">
+        <div className="px-4 flex flex-col gap-12">
+          <div>
+            <h2 className="text-xs font-mono text-zinc-500 uppercase tracking-[0.3em] mb-4">Selected Work</h2>
+            <h3 className="text-5xl font-heading font-bold mb-4 text-white tracking-tighter">
+              Featured <span className="text-metallic">Projects.</span>
+            </h3>
+          </div>
+          
+          <div className="flex flex-col gap-16">
+            {projects.map((project) => (
+              <div key={project.id} className="w-full flex flex-col gap-6 group">
+                <div className="relative aspect-[16/10] rounded-3xl overflow-hidden bg-white/5 border border-white/5">
+                  <Image src={project.image} alt={project.title} fill className="object-cover object-top opacity-80" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-100" />
+                  <div className="absolute bottom-0 left-0 w-full p-6 flex flex-col justify-end">
+                    <div className="flex flex-wrap gap-2 mb-2">
+                      {project.tech.map(t => (
+                        <span key={t} className="px-2 py-1 bg-black/50 backdrop-blur-md rounded-md text-[10px] text-zinc-300 font-medium border border-white/10">
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="flex flex-col gap-2">
+                  <h3 className="text-2xl font-heading font-bold text-white tracking-tight">{project.title}</h3>
+                  <p className="text-zinc-400 font-light text-sm leading-relaxed mb-2">
+                    {project.description}
+                  </p>
+                  <a href={project.live} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white font-medium hover:text-zinc-400 transition-colors">
+                    <ExternalLink className="w-4 h-4" /> <span className="uppercase text-[10px] tracking-widest">Live Demo</span>
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-75%"]);
 
   return (

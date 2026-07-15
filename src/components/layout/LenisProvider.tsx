@@ -11,6 +11,8 @@ if (typeof window !== 'undefined') {
 
 export function LenisProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
+    if (window.innerWidth < 768) return; // Disable on mobile to prevent lag
+
     const lenis = new Lenis({
       autoRaf: false,
     });

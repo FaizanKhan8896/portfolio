@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Syne } from "next/font/google";
 import "./globals.css";
 import { CustomCursor } from "@/components/ui/CustomCursor";
@@ -21,6 +21,13 @@ const syne = Syne({
 export const metadata: Metadata = {
   title: "Faizan Khan - AI Engineer & Full Stack Developer",
   description: "Portfolio of Faizan Khan, an elite AI Engineer and Creative Full Stack Developer.",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
 };
 
 export default function RootLayout({
