@@ -80,13 +80,27 @@ export function Projects() {
   }, []);
 
   const targetRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [scrollRange, setScrollRange] = useState(0);
+
+  useEffect(() => {
+    const updateRange = () => {
+      if (containerRef.current) {
+        setScrollRange(containerRef.current.scrollWidth - window.innerWidth);
+      }
+    };
+    updateRange();
+    window.addEventListener("resize", updateRange);
+    return () => window.removeEventListener("resize", updateRange);
+  }, []);
+
   const { scrollYProgress } = useScroll({
     target: targetRef,
     offset: ["start start", "end end"]
   });
 
-  // Map scroll progress to horizontal translation
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-80%"]);
+  // Map scroll progress to horizontal translation (exact pixel amount)
+  const x = useTransform(scrollYProgress, [0, 1], [0, -scrollRange]);
 
   if (isMobile) {
     return (
@@ -141,7 +155,7 @@ export function Projects() {
           <Marquee text="FEATURED WORK" speed={40} className="text-[20rem] font-heading font-bold" />
         </div>
 
-        <motion.div style={{ x }} className="flex w-max gap-16 md:gap-32 px-4 md:px-32 relative z-10 items-center">
+        <motion.div ref={containerRef} style={{ x }} className="flex w-max gap-16 md:gap-32 px-4 md:px-32 relative z-10 items-center">
           
           {/* Title Card */}
           <div className="w-[80vw] md:w-[40vw] shrink-0 flex flex-col justify-center">
