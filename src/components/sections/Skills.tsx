@@ -10,7 +10,7 @@ import {
 } from 'react-icons/si';
 import { FaJava, FaGitAlt, FaNetworkWired, FaAws } from 'react-icons/fa';
 
-const techIcons: Record<string, React.ElementType> = {
+const techIcons: Record<string, any> = {
   "React.js": SiReact,
   "Next.js": SiNextdotjs,
   "TypeScript": SiTypescript,
