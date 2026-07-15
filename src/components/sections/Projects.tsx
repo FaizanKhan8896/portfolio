@@ -89,18 +89,18 @@ export function Projects() {
 
   if (isMobile) {
     return (
-      <section id="projects" className="relative py-24 bg-zinc-950/80 backdrop-blur-3xl border-t border-white/5">
-        <div className="px-4 flex flex-col gap-12">
-          <div>
+      <section id="projects" className="relative py-24 bg-zinc-950/80 backdrop-blur-3xl border-t border-white/5 overflow-hidden">
+        <div className="flex flex-col gap-12">
+          <div className="px-4">
             <h2 className="text-xs font-mono text-zinc-500 uppercase tracking-[0.3em] mb-4">Selected Work</h2>
             <h3 className="text-5xl font-heading font-bold mb-4 text-white tracking-tighter">
               Featured <span className="text-metallic">Projects.</span>
             </h3>
           </div>
           
-          <div className="flex flex-col gap-16">
+          <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-8 scrollbar-hide px-4 w-full">
             {projects.map((project) => (
-              <div key={project.id} className="w-full flex flex-col gap-6 group">
+              <div key={project.id} className="w-[85vw] shrink-0 snap-center flex flex-col gap-6 group">
                 <div className="relative aspect-[16/10] rounded-3xl overflow-hidden bg-white/5 border border-white/5">
                   <Image src={project.image} alt={project.title} fill className="object-cover object-top opacity-80" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-100" />
