@@ -76,7 +76,7 @@ export function Skills() {
     <section id="skills" className="relative z-10 w-full min-h-screen py-24 md:py-32 bg-black/40 backdrop-blur-xl border-t border-white/5">
       
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 w-full">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-8">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
