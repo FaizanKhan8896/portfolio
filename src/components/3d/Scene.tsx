@@ -2,10 +2,28 @@
 
 import { Canvas } from '@react-three/fiber';
 import { FluidBackground } from './FluidBackground';
-import { Suspense } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { Preload } from '@react-three/drei';
 
 export function Scene() {
+  const [isMobile, setIsMobile] = useState(true); // Default true for SSR safety, evaluate on mount
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile(); // Check on mount
+    
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  if (isMobile) {
+    return (
+      <div className="fixed inset-0 z-0 pointer-events-none bg-gradient-to-br from-black via-[#0a0a0c] to-[#050505]" />
+    );
+  }
+
   return (
     <div className="fixed inset-0 z-0 pointer-events-none bg-background">
       <Canvas

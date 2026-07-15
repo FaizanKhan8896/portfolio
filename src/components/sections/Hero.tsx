@@ -72,7 +72,7 @@ export function Hero() {
               initial="hidden"
               animate="visible"
               variants={titleVariants}
-              className="text-[2.5rem] sm:text-[5rem] lg:text-[10rem] font-heading font-bold tracking-tighter leading-[0.8] text-white"
+              className="text-6xl sm:text-7xl md:text-8xl lg:text-[10rem] font-heading font-bold tracking-tighter leading-[0.8] text-white"
               style={{ transformOrigin: "bottom center" }}
             >
               FAIZAN
@@ -84,7 +84,7 @@ export function Hero() {
               initial="hidden"
               animate="visible"
               variants={titleVariants}
-              className="text-[2.5rem] sm:text-[5rem] lg:text-[10rem] font-heading font-bold tracking-tighter leading-[0.8] text-metallic"
+              className="text-6xl sm:text-7xl md:text-8xl lg:text-[10rem] font-heading font-bold tracking-tighter leading-[0.8] text-metallic"
               style={{ transformOrigin: "bottom center" }}
             >
               KHAN.
@@ -160,7 +160,7 @@ export function Hero() {
             initial={{ scale: 0.8, opacity: 0, filter: "blur(20px)" }}
             animate={{ scale: 1, opacity: 1, filter: "blur(0px)" }}
             transition={{ duration: 1.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className="w-48 h-48 sm:w-64 sm:h-64 md:w-[32rem] md:h-[32rem] relative shrink-0 group"
+            className="w-40 h-40 sm:w-56 sm:h-56 md:w-[32rem] md:h-[32rem] relative shrink-0 group"
             style={{ 
               WebkitMaskImage: "radial-gradient(circle at center, black 40%, transparent 70%)", 
               maskImage: "radial-gradient(circle at center, black 40%, transparent 70%)" 

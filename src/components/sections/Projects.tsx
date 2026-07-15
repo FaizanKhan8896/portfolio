@@ -109,7 +109,7 @@ export function Projects() {
           {projects.map((project) => (
             <div 
               key={project.id}
-              className="w-[90vw] md:w-[60vw] lg:w-[50vw] shrink-0 flex flex-col gap-8 group"
+              className="w-full max-w-[90vw] md:max-w-[60vw] lg:max-w-[50vw] shrink-0 flex flex-col gap-8 group"
             >
               {/* Image Container */}
               <div className="relative aspect-[16/10] rounded-[2rem] overflow-hidden bg-white/5 border border-white/5">
