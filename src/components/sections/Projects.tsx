@@ -131,9 +131,6 @@ export function Projects() {
       </section>
     );
   }
-
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-75%"]);
-
   return (
     <section ref={targetRef} id="projects" className="relative h-[400vh] bg-zinc-950/80 backdrop-blur-3xl border-t border-white/5">
       <div className="sticky top-0 h-screen flex items-center overflow-hidden">
